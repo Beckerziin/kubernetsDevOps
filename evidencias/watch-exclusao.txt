@@ -1,0 +1,17 @@
+﻿NAME                       READY   STATUS    RESTARTS   AGE
+entrega-5c8cd478b5-57spn   1/1     Running   0          4m17s
+entrega-5c8cd478b5-fh6zp   1/1     Running   0          4m17s
+entrega-5c8cd478b5-nw7s7   1/1     Running   0          13s
+entrega-5c8cd478b5-57spn   1/1     Terminating   0          4m23s
+entrega-5c8cd478b5-45p5q   0/1     Pending       0          0s
+entrega-5c8cd478b5-57spn   1/1     Terminating   0          4m23s
+entrega-5c8cd478b5-45p5q   0/1     Pending       0          0s
+entrega-5c8cd478b5-45p5q   0/1     ContainerCreating   0          0s
+entrega-5c8cd478b5-57spn   0/1     Completed           0          4m23s
+entrega-5c8cd478b5-45p5q   0/1     ContainerCreating   0          1s
+entrega-5c8cd478b5-45p5q   0/1     Running             0          1s
+entrega-5c8cd478b5-57spn   0/1     Completed           0          4m24s
+entrega-5c8cd478b5-57spn   0/1     Completed           0          4m24s
+entrega-5c8cd478b5-45p5q   0/1     Running             0          3s
+entrega-5c8cd478b5-45p5q   0/1     Running             0          3s
+entrega-5c8cd478b5-45p5q   1/1     Running             0          3s

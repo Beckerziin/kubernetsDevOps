@@ -1,0 +1,4 @@
+﻿NAME                       READY   STATUS    RESTARTS   AGE
+entrega-5c8cd478b5-57spn   1/1     Running   0          4m10s
+entrega-5c8cd478b5-fh6zp   1/1     Running   0          4m10s
+entrega-5c8cd478b5-nw7s7   1/1     Running   0          6s

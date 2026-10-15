@@ -1,0 +1,4 @@
+﻿ANTES do image load:
+(nenhuma imagem entrega-local no no)
+DEPOIS do image load:
+docker.io/library/entrega-local:v1

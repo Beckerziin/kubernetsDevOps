@@ -1,0 +1,3 @@
+﻿Apos apply do ConfigMap, antes do rollout restart:
+curl.exe -sS http://127.0.0.1:8080/api/status
+{"version": "v1", "message": "Entrega v1 publicada pelo grupo.", "pod": "entrega-5c8cd478b5-fh6zp", "ready": true}
