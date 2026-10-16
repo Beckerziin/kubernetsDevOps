@@ -1,0 +1,52 @@
+﻿Name:                   entrega
+Namespace:              aula-k8s
+CreationTimestamp:      Thu, 15 Oct 2026 22:12:16 -0300
+Labels:                 <none>
+Annotations:            deployment.kubernetes.io/revision: 3
+Selector:               app=entrega
+Replicas:               3 desired | 1 updated | 4 total | 3 available | 1 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        3
+RollingUpdateStrategy:  0 max unavailable, 1 max surge
+Pod Template:
+  Labels:  app=entrega
+  Containers:
+   web:
+    Image:      entrega-local:quebrada
+    Port:       8000/TCP (http)
+    Host Port:  0/TCP (http)
+    Limits:
+      cpu:     500m
+      memory:  96Mi
+    Requests:
+      cpu:      100m
+      memory:   32Mi
+    Liveness:   http-get http://:http/healthz delay=0s timeout=1s period=5s successThreshold=1 failureThreshold=3
+    Readiness:  http-get http://:http/readyz delay=0s timeout=1s period=2s successThreshold=1 failureThreshold=1
+    Startup:    http-get http://:http/healthz delay=0s timeout=1s period=2s successThreshold=1 failureThreshold=30
+    Environment Variables from:
+      entrega-config  ConfigMap  Optional: false
+    Environment:
+      POD_NAME:     (v1:metadata.name)
+    Mounts:        <none>
+  Volumes:         <none>
+  Node-Selectors:  <none>
+  Tolerations:     <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    ReplicaSetUpdated
+OldReplicaSets:  entrega-5c8cd478b5 (0/0 replicas created), entrega-54668796b8 (3/3 replicas created)
+NewReplicaSet:   entrega-5849895467 (1/1 replicas created)
+Events:
+  Type    Reason             Age    From                   Message
+  ----    ------             ----   ----                   -------
+  Normal  ScalingReplicaSet  3m45s  deployment-controller  Scaled up replica set entrega-5c8cd478b5 from 0 to 3
+  Normal  ScalingReplicaSet  2m31s  deployment-controller  Scaled up replica set entrega-54668796b8 from 0 to 1
+  Normal  ScalingReplicaSet  2m25s  deployment-controller  Scaled down replica set entrega-5c8cd478b5 from 3 to 2
+  Normal  ScalingReplicaSet  2m25s  deployment-controller  Scaled up replica set entrega-54668796b8 from 1 to 2
+  Normal  ScalingReplicaSet  2m19s  deployment-controller  Scaled down replica set entrega-5c8cd478b5 from 2 to 1
+  Normal  ScalingReplicaSet  2m19s  deployment-controller  Scaled up replica set entrega-54668796b8 from 2 to 3
+  Normal  ScalingReplicaSet  2m14s  deployment-controller  Scaled down replica set entrega-5c8cd478b5 from 1 to 0
+  Normal  ScalingReplicaSet  48s    deployment-controller  Scaled up replica set entrega-5849895467 from 0 to 1
